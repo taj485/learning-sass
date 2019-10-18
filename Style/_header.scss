@@ -1,0 +1,29 @@
+@mixin flexCenter($direction) { // mixins are similar to methods that can be called elsewhere
+    display: flex;
+    justify-content: center; //center of y axsis 
+    align-items: center; // center of x axis
+    height: 100vh; // scales reletivly to height 
+    flex-direction: $direction;
+}
+
+header {
+
+    @include flexCenter(column);
+
+    background: green;
+    color: $textColour;
+
+    button {
+        background: $primaryBtn;
+        color: $textColour;
+        &::before {
+            content: "HELOOOOOOOO";
+        }
+    }
+}
+
+// download live scsss compiler to see live scss changes
+// download live server to see live html changes
+// - we can do testing eg header - button 
+// - we can seperate our files with partials _header.scss and _variable.scss
+// - we can use variables, mixins small functions and inheritence
